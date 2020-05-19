@@ -14,12 +14,17 @@
         <div id="logo"><a href="{{ url_for('core.index') }}">
             Unilay 5
         </a></div>
-        <nav>
+        <nav id="navigation">
           <a href="#">HOME</a>
           <a href="#">CUSTOMIZE</a>
           <a href="#">TEMPLATE</a>
           <a href="#">CONTACT</a>
+          <a id="closeMenu" onClick="toggleMenu()">CLOSE</a>
         </nav>
+        <button id="openMenu" onClick="toggleMenu()">
+          &#9776;
+        </button>
+        <div id="shades" class="hidden" onClick="toggleMenu()"></div>
     </header>
       {% block templateMain %}
       <main>

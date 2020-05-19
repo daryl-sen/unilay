@@ -33,6 +33,11 @@ $footer_color: #393939;
 $body_font_size: 18px;
 $body_font_family: sans-serif;
 
+// how wide is the horizontal menu + logo + title in pixels
+$mobile_nav_cutoff: 950px;
+// how wide is the logo + title + floating menu button
+$min_nav_cutoff: 380px;
+
 
 
 
@@ -47,10 +52,6 @@ body {
   padding: 0;
   background-color: $body_background;
 }
-
-/* *****************************************************************************
-PAGE STRUCTURE
-***************************************************************************** */
 
 header {
   background-color: $primary_color;
@@ -77,6 +78,7 @@ header {
     grid-area: nav;
     padding: $standard_padding/2;
     text-align: right;
+    z-index: 10;
     a {
       display: inline-block;
       color: $navlink_color;
@@ -86,12 +88,51 @@ header {
     a:hover {
       color: $navlink_hover;
     }
+
+    #closeMenu {
+      display: none;
+    }
   }
+}
+
+#openMenu {
+  display: none;
+  outline: none;
+  position: fixed;
+  top: 0;
+  right: 1em;
+  padding: 1em;
+  color: #ffffff;
+  background-color: #1367B6;
+  border-radius: 1em 1em 1em 1em;
+  -moz-border-radius: 1em 1em 1em 1em;
+  -webkit-border-radius: 0em 0em 1em 1em;
+  border: 0;
+  font-size: 1em;
+  z-index: 9;
+}
+
+#openMenu::after {
+  content: " MENU";
+}
+
+#shades {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 8;
+  background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1));
+  opacity: 0.6;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+  text-align: center;
+  color: #6E6E6E;
 }
 
 section {
   margin: 1em 0 4em 0;
-  padding: 0 $standard_padding;
+  // padding: 0 $standard_padding;
 }
 
 .confined {
@@ -117,6 +158,51 @@ footer {
   #version {
     grid-area: version;
     text-align: right;
+  }
+}
+
+@media screen and (max-width: $page_width) {
+  main, footer {
+    padding: $standard_padding;
+  }
+}
+
+@media screen and (max-width: $mobile_nav_cutoff) {
+  header nav {
+    display: none;
+    background-color: #ffffff;
+    padding: 0;
+    border: 1px solid #e6e6e6;
+    position: fixed;
+    top: 0;
+    right: 1em;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 1em 1em 1em 1em;
+    -moz-border-radius: 1em 1em 1em 1em;
+    -webkit-border-radius: 0em 0em 1em 1em;
+
+    a {
+      display: block;
+      padding: 0.75em 1.5em;
+      color: #393939;
+      border-bottom: 1px solid #e6e6e6;
+    }
+
+    #closeMenu {
+      display: block;
+      color: $secondary_color;
+    }
+  }
+
+  #openMenu {
+    display: block;
+  }
+}
+
+@media screen and (max-width: $min_nav_cutoff) {
+  #openMenu::after {
+    content: "";
   }
 }
 
@@ -252,6 +338,10 @@ ADDON CHARACTERISTICS
 
 .hidden {
   display: none;
+}
+
+.display-block {
+  display: block;
 }
 
 .rounded {
