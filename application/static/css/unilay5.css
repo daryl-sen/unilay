@@ -1,11 +1,97 @@
 /* *****************************************************************************
+CONFIGURABLE COLORS
+***************************************************************************** */
+/* *****************************************************************************
 PAGE SETUP
 ***************************************************************************** */
-
 body {
-  background-color: #ffffff;
+  font-size: 18px;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
+/* *****************************************************************************
+PAGE STRUCTURE
+***************************************************************************** */
 header {
-  
+  background-color: #358bdc;
+  padding: 1em;
+  display: grid;
+  text-align: center;
+  grid-template-areas: "logo nav";
 }
+
+#logo {
+  padding-left: 1.5em;
+  background-image: url("../images/logo-small.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  text-align: left;
+  font-size: 2em;
+}
+#logo a:link, #logo a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav {
+  padding: 0.5em;
+  text-align: right;
+}
+nav a {
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0 1em;
+}
+nav a:hover {
+  color: #e9e9e9;
+}
+
+section {
+  margin: 1em 0 4em 0;
+}
+
+.confined {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+footer {
+  border-top: 1px solid #494949;
+  padding-top: 1em;
+  font-size: 0.85em;
+  margin: 5em 1em 1em 1em;
+  text-align: center;
+}
+
+/* *****************************************************************************
+TEXT SETUP (LINKS, HEADERS, PARAGRAPHS)
+***************************************************************************** */
+p {
+  line-height: 150%;
+}
+
+main a:link, main a:visited {
+  color: #358bdc;
+}
+main a:hover {
+  color: #a8cdf0;
+}
+
+/* *****************************************************************************
+BLOCK LEVEL ELEMENTS
+***************************************************************************** */
+/* *****************************************************************************
+ADDON CHARACTERISTICS
+***************************************************************************** */
+.hidden {
+  display: none;
+}
+
+/* *****************************************************************************
+FORMS
+***************************************************************************** */
+
+/*# sourceMappingURL=unilay5.css.map */

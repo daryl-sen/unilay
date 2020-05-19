@@ -1,6 +1,31 @@
 {% set web_title = "Homepage" %}
-{% extends 'base.html' %}
+{% extends 'unconfined.html' %}
 
 {% block main %}
-  <h1>Homepage</h1>
+<section id = "splash">
+  img here
+</section>
+
+<section class="confined">
+  <h1>Universal Layout Standard 5</h1>
+  <p>Unilay 5 is the 5<sup>th</sup> iteration of the universal HTML layout template for Sen's Works. This iteration introduces user-friendly features for users who may not be familiar with HTML. </p>
+  <p>It's now possible to customize Unilay with your own colors!</p>
+</section>
+
+<section class="confined">
+  <h2>Read the Docs</h2>
+  <p>Documentation can be found on Fluid Notebook, <a href="#">check it out</a>!
+</section>
+
+<section class="confined">
+  <h2>Forms</h2>
+  <form>
+    <label for="input_text_demo">Text Input Field</label>
+    <input type="text" name="input_text_demo" value="">
+    <label for="input_select_demo">Selection Field</label>
+    <select class="" name="input_select_demo">
+      <option value="">Option 1</option>
+    </select>
+  </form>
+</section>
 {% endblock %}
