@@ -1,0 +1,110 @@
+{% set web_title = "Template" %}
+{% extends 'unconfined.html' %}
+
+{% block main %}
+
+<section class="confined">
+  <h1>Template Documentation</h1>
+  <p>Here you can see how various HTML tags and custom CSS classes will look like on your webpage.</p>
+</section>
+
+<section class="confined">
+  <h1>Text and Headings (H1)</h1>
+  <h2>Heading 2</h2>
+  <h3>Heading 3</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+  <p>Paragraph text. Let's also take this opportunity to look at how <a href="#">links</a> look like. How about <b>bold</b>, <u>underlined</u>, <i>italicized</i>, and <em>emphasized text</em> look like. Keep in mind that you can customize link and link hover colors too!</p>
+  <p>Let's also look at lists.</p>
+  <ul>
+    <li>List item 1</li>
+    <li>List item 2</li>
+    <li>List item 3</li>
+  </ul>
+  <ol>
+    <li>Ordered lists</li>
+    <li>Ordered lists</li>
+  </ol>
+  <p>Perhaps you'd like a button for call to action? Add the <code>.action-button</code> class to your <code>a</code> tag to turn it into a block-level element. Additional CSS classes can be added. The button below has <code>class="action-button rounded lined"</code>.</p>
+  <a href="#" class="action-button rounded lined">Click Me</a>
+</section>
+
+<section class="confined">
+  <h2>Comparison Blocks</h2>
+  <p>These are great when you need content side by side, or side by side by side :)</p>
+  <p>When viewed on a smaller device, these comparison blocks will switch to a single-column so it's easy to read. This behavior also occurs when using internet explorer, or on other browsers which do not support CSS Grid.</p>
+  <h3>3-item comparison block</h3>
+  <p>Use the <code>.block-comparison-3</code> class in a <code>div</code> or other block-level HTML element.</p>
+  <div class="block-comparison-3">
+    <div class="comp1 lined">
+      <h4>Item 1</h4>
+      <p>The first item in your comparison block should have the <code>.comp1</code> class.</p>
+      <p>This item also has the <code>.lined</code> class applied to it, giving it a clean border. This border's color is determined by your "line color" customization.</p>
+    </div>
+    <div class="comp2 shadowed">
+      <h4>Item 2</h4>
+      <p>The second item in your comparison block should have the <code>.comp2</code> class.</p>
+      <p>If you need something that pops out a little bit more, the <code>.shadowed</code> class might be a good fit for you!</p>
+    </div>
+    <div class="comp3 rounded lined">
+      <h4>Item 3</h4>
+      <p>The third item in your comparison block should have the <code>.comp3</code> class.</p>
+      <p>I heard that rounded corners are all the rage now. Use the <code>.rounded</code> class to give your block-level element rounded corners.</p>
+    </div>
+  </div>
+  <h3>2-item comparison block</h3>
+  <p>Use the <code>.block-comparison-2</code> class in a <code>div</code> or other block-level HTML element.</p>
+  <div class="block-comparison-2">
+    <div class="comp1 lined rounded shadowed">
+      <h4>Item 1</h4>
+      <p>You can combine class names to get their combined effects. For example, this particular div has <code>class="comp1 lined rounded shadowed"</code>.</p>
+    </div>
+    <div class="comp2">
+      <h4>Item 2</h4>
+      <p>Or you can always keep it simple, <code>.comp1</code> to <code>.comp3</code> classes work without any additional styling.</p>
+    </div>
+  </div>
+</section>
+
+<section class="confined">
+  <h2>Other block-level elements</h2>
+  <div class="block">
+    <h3>Plain Block</h3>
+    <p>Block-level elements are very useful when you need to direct attention to certain areas in your webpage. Afterall, a page make up of a block of text can be very offputting.</p>
+    <p>These blocks create visual distinction and manageable chunks for the reader, making it more visually appealing and more readable. To create a block, add the <code>.block</code> class to a block-level HTML element.</p>
+  </div>
+  <div class="block lined">
+    <h3>Lined Block</h3>
+    <p>You can make blocks stand out more by applying CSS classes to it. This one has <code>class="lined block"</code> applied to it.</p>
+  </div>
+  <div class="block rounded lined">
+    <h3>Lined and rounded</h3>
+  </div>
+  <div class="block shadowed">
+    <h3>Shadowed Block</h3>
+  </div>
+  <div class="block flexbox lined">
+    <h2>Flexbox</h2>
+    <div class="lined block"></div>
+    <div class="lined block"></div>
+    <div class="lined block"></div>
+    <div class="lined block"></div>
+    <div class="lined block"></div>
+  </div>
+</section>
+
+<section class="confined">
+  <h2>Forms</h2>
+  <div class="block lined shadowed rounded">
+    <form>
+      <label for="input_text_demo">Text Input Field</label>
+      <input type="text" name="input_text_demo" value="">
+      <label for="input_select_demo">Selection Field</label>
+      <select class="" name="input_select_demo">
+        <option value="">Option 1</option>
+      </select>
+    </form>
+  </div>
+</section>
+
+{% endblock %}
