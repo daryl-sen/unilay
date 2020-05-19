@@ -18,14 +18,71 @@
 </section>
 
 <section class="confined">
+  <h1>Headings (H1)</h1>
+  <h2>Heading 2</h2>
+  <h3>Heading 3</h3>
+  <h4>Heading 4</h4>
+  <h5>Heading 5</h5>
+</section>
+
+<section class="confined">
+  <h2>Comparison Blocks</h2>
+  <div class="block-comparison-3">
+    <div class="comp1 lined">
+      Item 1
+    </div>
+    <div class="comp2 shadowed">
+      Item 2
+    </div>
+    <div class="comp3 rounded lined">
+      Item 3
+    </div>
+  </div>
+  <div class="block-comparison-2">
+    <div class="comp1 lined">
+      Item 1
+    </div>
+    <div class="comp2 lined">
+      Item 2
+    </div>
+  </div>
+</section>
+
+<section class="confined">
+  <h2>Other block level elements</h2>
+  <div class="block">
+    <h3>Plain Block</h3>
+  </div>
+  <div class="block lined">
+    <h3>Lined Block</h3>
+  </div>
+  <div class="block rounded lined">
+    <h3>Lined and rounded</h3>
+  </div>
+  <div class="block shadowed">
+    <h3>Shadowed Block</h3>
+  </div>
+  <div class="block flexbox lined">
+    <h2>Flexbox</h2>
+    <div class="lined block"></div>
+    <div class="lined block"></div>
+    <div class="lined block"></div>
+    <div class="lined block"></div>
+    <div class="lined block"></div>
+  </div>
+</section>
+
+<section class="confined">
   <h2>Forms</h2>
-  <form>
-    <label for="input_text_demo">Text Input Field</label>
-    <input type="text" name="input_text_demo" value="">
-    <label for="input_select_demo">Selection Field</label>
-    <select class="" name="input_select_demo">
-      <option value="">Option 1</option>
-    </select>
-  </form>
+  <div class="block lined shadowed rounded">
+    <form>
+      <label for="input_text_demo">Text Input Field</label>
+      <input type="text" name="input_text_demo" value="">
+      <label for="input_select_demo">Selection Field</label>
+      <select class="" name="input_select_demo">
+        <option value="">Option 1</option>
+      </select>
+    </form>
+  </div>
 </section>
 {% endblock %}

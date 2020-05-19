@@ -11,7 +11,7 @@ $navlink_hover: #e9e9e9;
 $primary_color: #358bdc;
 $secondary_color: #358bdc;
 
-$line_color: #494949;
+$line_color: #e6e6e6;
 $title_color: #ffffff;
 
 $header1_color: inherit;
@@ -24,6 +24,14 @@ $shadow_color: rgba(230,230,230,0.5);
 
 $page_width: 1000px;
 
+$body_background: #ffffff;
+
+$standard_padding: 1.5em;
+
+$footer_color: #393939;
+
+$body_font_size: 18px;
+$body_font_family: sans-serif;
 
 
 
@@ -33,10 +41,11 @@ PAGE SETUP
 ***************************************************************************** */
 
 body {
-  font-size: 18px;
-  font-family: sans-serif;
+  font-size: $body_font_size;
+  font-family: $body_font_family;
   margin: 0;
   padding: 0;
+  background-color: $body_background;
 }
 
 /* *****************************************************************************
@@ -45,56 +54,72 @@ PAGE STRUCTURE
 
 header {
   background-color: $primary_color;
-  padding: 1em;
+  padding: $standard_padding;
   display: grid;
   text-align: center;
-  grid-template-areas:
-    "logo nav";
-}
+  grid-template-areas: "logo nav";
 
-#logo {
-  padding-left: 1.5em;
-  background-image: url('../images/logo-small.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  text-align: left;
-  font-size: 2em;
-  a:link, a:visited {
-    color: $title_color;
-    text-decoration: none;
+  #logo {
+    padding-left: 1.5em;
+    grid-area: logo;
+    background-image: url('../images/logo-small.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: left;
+    font-size: 2em;
+    a:link, a:visited {
+      color: $title_color;
+      text-decoration: none;
+    }
   }
-}
 
-nav {
-  padding: 0.5em;
-  text-align: right;
-  a {
-    display: inline-block;
-    color: $navlink_color;
-    text-decoration: none;
-    padding: 0 1em;
-  }
-  a:hover {
-    color: $navlink_hover;
+  nav {
+    grid-area: nav;
+    padding: $standard_padding/2;
+    text-align: right;
+    a {
+      display: inline-block;
+      color: $navlink_color;
+      text-decoration: none;
+      padding: 0 1em;
+    }
+    a:hover {
+      color: $navlink_hover;
+    }
   }
 }
 
 section {
   margin: 1em 0 4em 0;
+  padding: 0 $standard_padding;
 }
 
 .confined {
   max-width: $page_width;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 footer {
   border-top: 1px solid $line_color;
   padding-top: 1em;
   font-size: 0.85em;
-  margin: 5em 1em 1em 1em;
-  text-align: center;
+  color: $footer_color;
+  margin: 5em 1em 3em 1em;
+  display: grid;
+  grid-template-areas:
+    "copyright version";
+
+  #copyright {
+    grid-area: copyright;
+    text-align: left;
+  }
+  #version {
+    grid-area: version;
+    text-align: right;
+  }
 }
+
 
 
 /* *****************************************************************************
@@ -115,23 +140,37 @@ main {
 }
 
 h1 {
-
+  color: $header1_color;
 }
 
 h2 {
-
+  color: $header2_color;
 }
 
 h3 {
-
+  color: $header3_color;
 }
 
 h4 {
-
+  color: $header4_color;
 }
 
 h5 {
+  color: $header5_color;
+}
 
+pre {
+  padding: 0.5em;
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+pre, code {
+  background-color: #e6e6e6;
+  font-family: monospace;
 }
 
 // img {
@@ -144,15 +183,151 @@ h5 {
 BLOCK LEVEL ELEMENTS
 ***************************************************************************** */
 
+.block {
+  padding: $standard_padding;
+  margin-bottom: 2em;
+}
+
+.block-comparison-3 {
+  display: grid;
+  grid-template-areas:
+    "comp1 comp2 comp3";
+  grid-gap: $standard_padding;
+
+  .comp1 {
+    grid-area: comp1;
+  }
+  .comp2 {
+    grid-area: comp2;
+  }
+  .comp3 {
+    grid-area: comp3;
+  }
+
+  .comp1,
+  .comp2,
+  .comp3 {
+    padding: $standard_padding/2;
+    margin-bottom: $standard_padding;
+  }
+}
+
+.block-comparison-2 {
+  display: grid;
+  grid-template-areas:
+    "comp1 comp2";
+  grid-gap: $standard_padding;
+  .comp1 {
+    grid-area: comp1;
+  }
+  .comp2 {
+    grid-area: comp2;
+  }
+
+  .comp1,
+  .comp2 {
+    padding: $standard_padding/2;
+    margin-bottom: $standard_padding;
+  }
+}
+
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+
+  div {
+    margin: 0.5em;
+    display: block;
+    width: 10em;
+  }
+}
 
 /* *****************************************************************************
 ADDON CHARACTERISTICS
 ***************************************************************************** */
 
+.lined {
+  border: 1px solid $line_color;
+}
+
 .hidden {
   display: none;
 }
 
+.rounded {
+  border-radius: 1em 1em 1em 1em;
+  -moz-border-radius: 1em 1em 1em 1em;
+  -webkit-border-radius: 1em 1em 1em 1em;
+}
+
+.shadowed {
+  -webkit-box-shadow: 0px 10px 15px 0px $shadow_color;
+  -moz-box-shadow: 0px 10px 15px 0px $shadow_color;
+  box-shadow: 0px 10px 15px 0px $shadow_color;
+}
+
+
+
 /* *****************************************************************************
 FORMS
 ***************************************************************************** */
+
+form
+{
+  font-size: 1em;
+}
+
+input[type='text'],
+input[type='number'],
+input[type='submit'],
+input[type='password'],
+select,
+textarea {
+  font-size: 1em;
+  padding: 0.5em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  border: 1px solid;
+  font-family: inherit;
+  margin-bottom: 1em;
+  border-color: #e6e6e6;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 0.5em 0.5em 0.5em 0.5em;
+  -moz-border-radius: 0.5em 0.5em 0.5em 0.5em;
+  -webkit-border-radius: 0.5em 0.5em 0.5em 0.5em;
+}
+
+input[type='submit'] {
+  margin-top: 1em;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+  margin: 0.5em 0.5em 1em 0.5em;
+}
+
+.redButton {
+  background-color: #ff3939;
+  color: #fff;
+}
+
+.blueButton {
+  background-color: #358bdc;
+  color: #fff;
+}
+
+textarea {
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 100px;
+  margin-bottom: 1em;
+  resize:vertical;
+}
+
+#quillEditor {
+  font-size: 1em;
+}
