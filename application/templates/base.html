@@ -15,9 +15,9 @@
             Unilay 5
         </a></div>
         <nav id="navigation">
-          <a href="#">HOME</a>
+          <a href="{{ url_for('core.index') }}">HOME</a>
           <a href="#">CUSTOMIZE</a>
-          <a href="#">TEMPLATE</a>
+          <a href="{{ url_for('core.template') }}">TEMPLATE</a>
           <a href="#">CONTACT</a>
           <a id="closeMenu" onClick="toggleMenu()">CLOSE</a>
         </nav>
