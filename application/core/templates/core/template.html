@@ -114,6 +114,11 @@ print("Isn't this fun?")</pre>
     <h3>Shadowed Block</h3>
     <p>This one has <code>class="shadowed block"</code></p>
   </div>
+  <div class="notification" id="notification1" onClick="dismissNotif('notification1')">
+    Notification blocks have the <code>.notification</code> class. They need to be assigned an ID and <code>onclick</code> attribute so they can be dismissed when the user clicks on it. For example, this notification div has the following:
+    <pre>class="notification" id="notification1" onClick="dismissNotif('notification1')"</pre>
+    Do not use <code>&lt;p&gt;</code> tags in notification blocks. Clicking anywhere in the box should dismiss the notification.
+  </div>
   <!-- <div class="block flexbox lined">
     <h2>Flexbox</h2>
     <div class="lined block"></div>

@@ -102,6 +102,7 @@ section {
 }
 
 footer {
+  font-size: 0.85em;
   border-top: 1px solid #e6e6e6;
   padding-top: 1em;
   max-width: 900px;
@@ -121,7 +122,7 @@ footer #version {
 }
 
 @media screen and (max-width: 59em) {
-  main, footer {
+  body > main, footer {
     padding: 1.5em;
   }
 }
@@ -353,6 +354,13 @@ BLOCK LEVEL ELEMENTS
   grid-template-columns: 300px auto;
 }
 
+@media screen and (max-width: 900px) {
+  .main-aside, .aside-main {
+    grid-template-areas: "main" "aside";
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+  }
+}
 .spacer-small {
   padding-bottom: 2em;
 }
@@ -408,9 +416,43 @@ ADDON CHARACTERISTICS
   background-color: #fff;
 }
 
+.bg-green {
+  background-color: green;
+}
+
+.bg-red {
+  background-color: red;
+}
+
+.bg-yellow {
+  background-color: yellow;
+}
+
 .border-left-accent {
   border-left: 5px solid #ff3939;
   padding: 0.5em 1em;
+}
+
+.notification {
+  padding: 1.5em;
+  border: 1px solid #e6e6e6;
+  line-height: 1.5em;
+  margin: 1.5em 0;
+}
+
+.notification::before {
+  content: "⚠";
+  font-size: 1.5em;
+  padding-left: 0;
+}
+
+.notification::after {
+  content: "Dismiss";
+  display: block;
+  text-align: right;
+  border-top: 1px solid #e6e6e6;
+  margin-top: 0.5em;
+  color: #595959;
 }
 
 /* *****************************************************************************

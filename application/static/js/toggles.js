@@ -1,6 +1,6 @@
 function toggleElement(id) {
-  target = document.getElementById(id)
-  target.classList.toggle('hidden')
+  target = document.getElementById(id);
+  target.classList.toggle('hidden');
 }
 
 function toggleMenu() {
@@ -8,5 +8,10 @@ function toggleMenu() {
   shades = document.getElementById('shades');
 
   shades.classList.toggle('hidden');
-  menu.classList.toggle('display-block')
+  menu.classList.toggle('display-block');
+}
+
+function dismissNotif(id) {
+  target = document.getElementById(id);
+  target.classList.toggle('hidden');
 }

@@ -11,7 +11,7 @@
 
 #grid-main {
   grid-area: grid-main;
-  background-image: url('../images/splash.png');
+  background-image: url('../images/splash.png?v=2');
   /* background-color: #820B8A; */
   color: #fff;
   background-size: cover;
@@ -87,11 +87,16 @@
     grid-template-rows: auto auto 0 0 auto;
   }
   #grid-main,
+  #grid-main #splash-text,
   #grid-side1,
   #grid-side2,
   #grid-side3,
   #grid-side4 {
     padding: 1rem;
+  }
+
+  #grid-main h1 {
+    font-size: 3em;
   }
 }
 
