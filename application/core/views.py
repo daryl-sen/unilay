@@ -9,3 +9,7 @@ def index():
 @core.route('/template')
 def template():
     return render_template('template.html')
+
+@core.route('/customize')
+def customize():
+    return render_template('customize.html')

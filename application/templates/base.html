@@ -6,19 +6,20 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/fav.ico') }}">
     <title>Unilay 5{% if web_title %} - {{web_title}}{% endif %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/unilay5.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
     <script src="{{ url_for('static', filename='js/toggles.js')}}" charset="utf-8"></script>
     {% if additional_head %}{{ additional_head }}{% endif %}
   </head>
   <body class="unilay5">
     <header>
         <div id="logo"><a href="{{ url_for('core.index') }}">
-            Unilay 5
+            UNILAY
         </a></div>
         <nav id="navigation">
           <a href="{{ url_for('core.index') }}">HOME</a>
-          <a href="#">CUSTOMIZE</a>
+          <a href="{{ url_for('core.customize') }}">CUSTOMIZE</a>
           <a href="{{ url_for('core.template') }}">TEMPLATE</a>
-          <a href="#">CONTACT</a>
+          <a href="{{ url_for('core.index') }}#contact">CONTACT</a>
           <a id="closeMenu" onClick="toggleMenu()">CLOSE</a>
         </nav>
         <button id="openMenu" onClick="toggleMenu()">
