@@ -7,7 +7,6 @@
   grid-template-columns:4fr 2fr 2fr;
   grid-template-rows: auto auto;
   grid-gap: 0;
-  align-items: stretch;
 }
 
 #grid-main {
@@ -17,12 +16,9 @@
   color: #fff;
   background-size: cover;
   background-repeat: no-repeat;
-  position: relative;
 }
 
 #grid-main #splash-text {
-  position: absolute;
-  bottom: 0;
   text-align: center;
   padding: 2em;
 }
@@ -56,7 +52,7 @@
 #grid-side4 {
   grid-area: grid-side4;
   background-color: #99E1D9;
-  color: #fff;
+  color: #000;
 }
 
 #grid-side1,
@@ -68,27 +64,27 @@
 
 
 @media screen and (max-width: 1300px) {
-  #custom-grid1 {
+  #splash {
     grid-template-areas:
       "grid-main grid-main"
-      "grid-side1 grid-side3"
-      "grid-side2 grid-side4"
+      "grid-side1 grid-side2"
+      "grid-side3 grid-side4"
       ;
     grid-template-columns:1fr 1fr;
-    grid-template-rows: 300px auto auto;
+    grid-template-rows: auto auto auto;
   }
 }
 
 @media screen and (max-width: 750px) {
-  #custom-grid1 {
+  #splash {
     grid-template-areas:
       "grid-main"
       "grid-side1"
-      "grid-side3"
       "grid-side2"
+      "grid-side3"
       "grid-side4"      ;
     grid-template-columns:auto;
-    grid-template-rows: 300px auto auto auto auto;
+    grid-template-rows: auto auto 0 0 auto;
   }
   #grid-main,
   #grid-side1,
@@ -114,10 +110,4 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
-
-.examples {
-  padding: 1em;
-  background-color: #fff;
-  width: 300px;
 }

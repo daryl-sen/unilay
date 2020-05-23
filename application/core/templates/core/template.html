@@ -2,19 +2,26 @@
 {% extends 'unconfined.html' %}
 
 {% block main %}
-<section class="confined spacer-medium">
+<section class="confined spacer-large">
   <h1>Template Documentation</h1>
   <p>Here you can see how various HTML tags and custom CSS classes will look like on your webpage.</p>
+  <h2>Contents</h2>
+  <a href="#textheadings" class="navigation">Text Headings and Inline Elements</a>
+  <a href="#comparisons" class="navigation">Comparison Blocks</a>
+  <a href="#otherblocks" class="navigation">Other Block-Level Elements</a>
+  <a href="#withsidebars" class="navigation">Blocks with Sidebars</a>
+  <a href="#confined" class="navigation">Confined Sections</a>
+  <a href="#forms" class="navigation">Forms</a>
 </section>
 
-<section class="confined spacer-large">
+<section class="confined spacer-large" id="textheadings">
   <h1>Text, Headings, Inline Elements</h1>
   <h1>Heading 1</h1>
   <h2>Heading 2</h2>
   <h3>Heading 3</h3>
   <h4>Heading 4</h4>
   <h5>Heading 5</h5>
-  <p>Paragraph text. Let's also take this opportunity to look at how <a href="#">links</a> look like. How about <b>bold</b>, <u>underlined</u>, <i>italicized</i>, and <em>emphasized text</em> look like. Keep in mind that you can customize link and link hover colors too!</p>
+  <p>Paragraph text. Let's also take this opportunity to look at how <a href="#">links</a> look like (and <a href="#" target="_blank">links that open new windows</a>). How about <b>bold</b>, <u>underlined</u>, <i>italicized</i>, and <em>emphasized text</em> look like. Keep in mind that you can customize link and link hover colors too!</p>
   <p>Let's also look at lists.</p>
   <ul>
     <li>List item 1</li>
@@ -35,9 +42,12 @@ print("Isn't this fun?")</pre>
   <hr>
   <p>One way to create separation between large chunks of text is to use a horizontal rule (above) <code>&lt;hr&gt;</code>.</p>
   <p>If you need more space behind any element (including block-level elements), add the <code>.spacer-small</code>, <code>.spacer-medium</code>, or <code>.spacer-large</code> class. They will add an additional 2em, 4em, or 10em below the element, respectively. Alternatively, you can add a <code>&lt;div&gt;</code> with any of these classes to achieve the same effect.</p>
+  <a href="#" class="button-secondary rounded shadowed">Back to top</a>
 </section>
 
-<section class="confined spacer-large">
+
+
+<section class="confined spacer-large" id="comparisons">
   <h2>Comparison Blocks</h2>
   <p>These are great when you need content side by side, or side by side by side :)</p>
   <p>When viewed on a smaller device, these comparison blocks will switch to a single-column so it's easy to read. This behavior also occurs when using internet explorer, or on other browsers which do not support CSS Grid.</p>
@@ -72,14 +82,18 @@ print("Isn't this fun?")</pre>
       <p>Or you can always keep it simple, <code>.comp1</code> to <code>.comp3</code> classes work without any additional styling.</p>
     </div>
   </div>
+  <a href="#" class="button-secondary rounded shadowed">Back to top</a>
 </section>
 
-<section class="confined spacer-large">
+
+
+<section class="confined spacer-large" id="otherblocks">
   <h2>Other block-level elements</h2>
   <div class="block">
     <h3>Plain Block</h3>
     <p>Block-level elements are very useful when you need to direct attention to certain areas in your webpage. Afterall, a page make up of a block of text can be very offputting.</p>
     <p>These blocks create visual distinction and manageable chunks for the reader, making it more visually appealing and more readable. To create a block, add the <code>.block</code> class to a block-level HTML element.</p>
+    <p class="border-left-accent">You can also elevate paragraphs by adding a <code>.border-left-accent</code> class.</p>
   </div>
   <div class="block lined">
     <h3>Lined Block</h3>
@@ -100,17 +114,71 @@ print("Isn't this fun?")</pre>
     <h3>Shadowed Block</h3>
     <p>This one has <code>class="shadowed block"</code></p>
   </div>
-  <div class="block flexbox lined">
+  <!-- <div class="block flexbox lined">
     <h2>Flexbox</h2>
     <div class="lined block"></div>
     <div class="lined block"></div>
     <div class="lined block"></div>
     <div class="lined block"></div>
     <div class="lined block"></div>
-  </div>
+  </div> -->
+  <a href="#" class="button-secondary rounded shadowed">Back to top</a>
 </section>
 
-<section class="confined spacer-large">
+
+
+<section class="confined main-aside spacer-large" id="withsidebars">
+  <main>
+    <h2>Sections With Sidebars</h2>
+    <p>Some pages could really benefit from additional information or navigation in a sidebar. To create a section like that, use the <code>.main-aside</code> or <code>.aside-main</code> class in the containing element. The former has the main content on the left and the side content on the right; the latter is reversed.</p>
+    <p>Your main content should be enclosed by the <code>&lt;main&gt;</code> tag, and side content by the <code>&lt;aside&gt;</code> tag.</p>
+    <p>Here's a code example:</p>
+    <pre>&lt;div class="main-aside"&gt;
+  &lt;main&gt;
+    Main content
+  &lt;/main&gt;
+  &lt;aside&gt;
+    Sidebar content
+  &lt;/aside&gt;
+&lt;/div&gt;</pre>
+    <p>The order you put the <code>&lt;main&gt;</code> and <code>&lt;aside&gt;</code> tags does not matter, and the containing element can be any block-level HTML tag, such as <code>&lt;section&gt;</code>, <code>&lt;div&gt;</code>, and <code>&lt;main&gt;</code>.</p>
+    <pre class="ql-syntax" spellcheck="false">&lt;div class="main-aside"&gt;
+  &lt;aside&gt;
+    Main content
+  &lt;/aside&gt;
+  &lt;main&gt;
+    Sidebar content
+  &lt;/main&gt;
+&lt;/div&gt;</pre>
+    <p>Conside using wider <code>.confined</code> max-width values for these sections.</p>
+    <a href="#" class="button-secondary rounded shadowed">Back to top</a>
+  </main>
+  <aside>
+    <div class="spacer-medium"></div>
+    <div class="lined sidebar-block">
+      <h3>Sidebar</h3>
+      <p>Here's my sidebar! An appropriate type of content to put in the sidebar would be navigation links.</p>
+      <a href="#" class="navigation">Navigation Link 1</a>
+      <a href="#" class="navigation">Navigation Link 2</a>
+      <p>Blocks in the sidebar should be given the <code>.sidebar-block</code> class, as these have reduced top and bottom padding.
+    </div>
+  </aside>
+</section>
+
+
+
+<section class="confined spacer-large" id="confined">
+  <h2>Confined sections</h2>
+  <p>All the sections you've seen so far have the <code>.confined</code> class. This confines the element to a maximum width, so text don't stretch from edge to edge. This means the reader's eyes don't have to scan from the extreme left to extreme right, providing a more comfortable reading experience.</p>
+  <p class="border-left-accent">You can set the max-width for <code>.confined</code> elements when you customize Unilay.</p>
+  <p>However, if you want to do something clever with the design and would prefer take advantage of the entire width of the window, simply omit the <code>.confined</code> class. The <a href="{{ url_for('core.index') }}">homepage</a> uses an unconfined block for the intro.</p>
+  <p>Note that all <code>&lt;section&gt;</code> elements have built-in margins - 4ems on top and 1em below.</p>
+  <a href="#" class="button-secondary rounded shadowed">Back to top</a>
+</section>
+
+
+
+<section class="confined spacer-large" id="forms">
   <h2>Forms</h2>
   <p>Say goodbye to ugly forms! These will look good on a desktop, tablet, or phone. There's plenty of spacing between each clickable element, so finger-operated devices won't need to worry about wrong clicks/taps.</p>
   <div class="block lined shadowed rounded">
@@ -130,6 +198,7 @@ print("Isn't this fun?")</pre>
       <input type="submit" class="button-secondary" value="Submit Button (Secondary color)">
     </form>
   </div>
+  <a href="#" class="button-secondary rounded shadowed">Back to top</a>
 </section>
 
 {% endblock %}

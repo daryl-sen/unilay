@@ -1,44 +1,63 @@
 /* *****************************************************************************
 CONFIGURABLE COLORS
 ***************************************************************************** */
-$font_color: #000;
-$font_color_dark_bg: #fff;
 
-$link_color: #ff3939;
+
+// TEXT COLORS
+$font_color: #000; // general text color
+$font_color_dark_bg: #fff; // text color on dark backgrounds
+
+$navlink_color: #000; // color of links in the navigation menu
+$navlink_hover: #e0e0e0;
+$navlink_mobile_color: #393939; // color of links in the navigation menu on mobile devices
+$navlink_mobile_bg: #ffffff; // background color of links on mobile devices
+$navlink_mobile_button_color: #dddddd;
+$navlink_mobile_border_color: #e9e9e9;
+
+$link_color: #ff3939; // color of regular links in the body
 $link_hover: #ff9999;
 
-$navlink_color: #000;
-$navlink_hover: #e0e0e0;
+$primary_color: #ff3939; // color that will appear most
+$secondary_color: #358bdc; // a secondary color
 
-$primary_color: #F9F9F9;
-$secondary_color: #ff3939;
 
-$line_color: #e6e6e6;
-$title_color: #393939;
-
-$header1_color: inherit;
-$header2_color: inherit;
-$header3_color: inherit;
-$header4_color: inherit;
-$header5_color: inherit;
-
-$shadow_color: rgba(230,230,230,0.5);
-
-$page_width: 1000px;
-
+// ELEMENT COLORS
+$line_color: #e6e6e6; // color for lines that serve to separate content (i.e. borders)
+$title_color: #393939; // color for the page logo/title
+$header_color: #f9f9f9; // color for the <header> element
+$header_bottom_border: #d0d0d0; // color for the bottom border of the header
+$shadow_color: rgba(0, 0, 0, 0.1);
 $body_background: #ffffff;
 
+
+// HEADINGS
+$heading1_color: inherit;
+$heading2_color: inherit;
+$heading3_color: inherit;
+$heading4_color: inherit;
+$heading5_color: inherit;
+$heading1_size: 2em;
+$heading2_size: 1.6em;
+$heading3_size: 1.4em;
+$heading4_size: 1.2em;
+$heading5_size: 1em;
+
+
+// LAYOUT CONFIGURATION
+$aside_width: 300px;
+$page_width: 50em; // width of the .confined class, determines how wide elements can get in confined blocks
 $standard_padding: 1.5em;
-
-$footer_color: #393939;
-
 $body_font_size: 18px;
 $body_font_family: sans-serif;
 
-// how wide is the horizontal menu + logo + title in pixels
-$mobile_nav_cutoff: 950px;
-// how wide is the logo + title + floating menu button
-$min_nav_cutoff: 380px;
+// Responsive Quantifiers
+$mobile_nav_cutoff: 50em; // width of horizontal menu + logo + title in pixels
+$min_nav_cutoff: 380px; // width of logo + title + floating menu button
+$footer_color: #393939; // color of footer text
+
+
+
+
 
 
 
@@ -57,7 +76,8 @@ body {
 }
 
 header {
-  background-color: $primary_color;
+  background-color: $header_color;
+  border-bottom: 1px solid $header_bottom_border;
   padding: $standard_padding;
   display: grid;
   text-align: center;
@@ -106,8 +126,8 @@ header {
   top: 0;
   right: 1em;
   padding: 1em;
-  color: #ffffff;
-  background-color: #1367B6;
+  color: $navlink_color;
+  background-color: $navlink_mobile_button_color;
   border-radius: 1em 1em 1em 1em;
   -moz-border-radius: 1em 1em 1em 1em;
   -webkit-border-radius: 0em 0em 1em 1em;
@@ -148,12 +168,13 @@ section {
 footer {
   border-top: 1px solid $line_color;
   padding-top: 1em;
-  font-size: 0.85em;
+  max-width: 900px;
   color: $footer_color;
-  margin: 5em 1em 3em 1em;
+  margin: 5em auto 3em auto;
   display: grid;
   grid-template-areas:
     "copyright version";
+  grid-gap: 0;
 
   #copyright {
     grid-area: copyright;
@@ -165,7 +186,7 @@ footer {
   }
 }
 
-@media screen and (max-width: $page_width) {
+@media screen and (max-width: $page_width + $standard_padding*6) {
   main, footer {
     padding: $standard_padding;
   }
@@ -174,9 +195,9 @@ footer {
 @media screen and (max-width: $mobile_nav_cutoff) {
   header nav {
     display: none;
-    background-color: #ffffff;
+    background-color: $navlink_mobile_bg;
     padding: 0;
-    border: 1px solid #e6e6e6;
+    border: 1px solid $navlink_mobile_border_color;
     position: fixed;
     top: 0;
     right: 1em;
@@ -189,8 +210,8 @@ footer {
     a {
       display: block;
       padding: 0.75em 1.5em;
-      color: #393939;
-      border-bottom: 1px solid #e6e6e6;
+      color: $navlink_mobile_color;
+      border-bottom: 1px solid $navlink_mobile_border_color;
     }
 
     #closeMenu {
@@ -228,57 +249,66 @@ main {
   a:hover {
     color: $link_hover;
   }
+  a[target=_blank]::before {
+    content: '\274F  ';
+  }
+
+  a.navigation {
+    display: block;
+    margin: 0.5em 0;
+  }
+  a.navigation:before {
+    content: '\261B  ';
+  }
 
   %link-button
   {
-    background-color: $primary_color;
-    color: #fff;
     padding: 0.5em 1em;
     text-decoration: none;
     margin: 1em auto;
     display: inline-block;
     text-align: center;
-    min-width: 10em;
   }
 
   a.button-primary {
     @extend %link-button;
     background-color: $primary_color;
-    color: #fff;
+    color: $font_color_dark_bg;
   }
   a.button-secondary {
     @extend %link-button;
     background-color: $secondary_color;
+    color: $font_color_dark_bg;
   }
   a.button-primary:hover,
   a.button-secondary:hover {
-    color: #e6e6e6;
+    color: $navlink_hover;
   }
 }
 
 h1 {
-  color: $header1_color;
-  font-size: 2em;
+  color: $heading1_color;
+  font-size: $heading1_size;
 }
 
 h2 {
-  color: $header2_color;
-  font-size: 1.6em;
+  color: $heading2_color;
+  font-size: $heading2_size;
 }
 
 h3 {
-  color: $header3_color;
-  font-size: 1.4em;
+  color: $heading3_color;
+  font-size: $heading3_size;
 }
 
 h4 {
-  color: $header4_color;
-  font-size: 1.2em;
+  color: $heading4_color;
+  font-size: $heading4_size;
 }
 
 h5 {
-  color: $header5_color;
-  font-size: 1em;
+  color: $heading5_color;
+  font-size: $heading5_size;
 }
 
 pre {
@@ -316,13 +346,20 @@ img {
   margin: auto;
 }
 
+
+
 /* *****************************************************************************
 BLOCK LEVEL ELEMENTS
 ***************************************************************************** */
 
 .block {
   padding: $standard_padding;
-  margin-bottom: 2em;
+  margin-bottom: $standard_padding;
+}
+
+.sidebar-block {
+  padding: 0 $standard_padding 0 $standard_padding;
+  margin-bottom: $standard_padding
 }
 
 .block-comparison-3 {
@@ -350,6 +387,12 @@ BLOCK LEVEL ELEMENTS
   }
 }
 
+@media screen and (max-width: 850px) {
+  .block-comparison-3 {
+    display: block;
+  }
+}
+
 .block-comparison-2 {
   display: grid;
   grid-template-areas:
@@ -369,15 +412,43 @@ BLOCK LEVEL ELEMENTS
   }
 }
 
+@media screen and (max-width: 750px) {
+  .block-comparison-2 {
+    display: block;
+  }
+}
+
 .flexbox {
   display: flex;
   flex-wrap: wrap;
+  // div {
+  //   margin: 0.5em;
+  //   display: block;
+  //   width: 10em;
+  // }
+}
 
-  div {
-    margin: 0.5em;
-    display: block;
-    width: 10em;
+%with-sidebar {
+  display: grid;
+  grid-gap: $standard_padding;
+
+  main {
+    grid-area: main;
   }
+  aside {
+    grid-area: aside;
+  }
+}
+
+.main-aside {
+  @extend %with-sidebar;
+  grid-template-areas: "main aside";
+  grid-template-columns: auto $aside_width;
+}
+.aside-main {
+  @extend %with-sidebar;
+  grid-template-areas: "aside main";
+  grid-template-columns: $aside_width auto;
 }
 
 .spacer-small {
@@ -436,6 +507,11 @@ ADDON CHARACTERISTICS
   background-color: #fff;
 }
 
+.border-left-accent {
+  border-left: 5px solid $primary_color;
+  padding: 0.5em 1em;
+}
+
 
 
 /* *****************************************************************************
@@ -462,7 +538,7 @@ textarea {
   border: 1px solid;
   font-family: inherit;
   margin-bottom: 1em;
-  border-color: #e6e6e6;
+  border-color: $line_color;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -482,12 +558,12 @@ input[type='checkbox'] {
 
 .button-primary {
   background-color: $primary_color;
-  color: #fff;
+  color: $font_color_dark_bg;
 }
 
 .button-secondary {
   background-color: $secondary_color;
-  color: #fff;
+  color: $font_color_dark_bg;
 }
 
 textarea {
@@ -496,8 +572,4 @@ textarea {
   min-height: 100px;
   margin-bottom: 1em;
   resize:vertical;
-}
-
-#quillEditor {
-  font-size: 1em;
 }
