@@ -13,7 +13,8 @@
   grid-area: grid-main;
   background-image: url('../images/splash.png?v=2');
   /* background-color: #820B8A; */
-  color: #fff;
+  background-color: #9A3DA0;
+  color: #ffffff;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -36,15 +37,14 @@
 }
 #grid-side2 {
   grid-area: grid-side2;
+  background-color: #E84855;
   background-image: url('../images/savetime.png');
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: #630f0f;
-  background-color: blue;
 }
 #grid-side3 {
   grid-area: grid-side3;
-  background-color: yellow;
+  background-color: #99E1D9;
   background-image: url('../images/beginner.png');
   background-size: cover;
   background-repeat: no-repeat;
