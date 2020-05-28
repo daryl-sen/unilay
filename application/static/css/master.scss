@@ -400,6 +400,7 @@ BLOCK LEVEL ELEMENTS
   display: grid;
   grid-template-areas:
     "comp1 comp2";
+  grid-template-columns: 1fr 1fr;
   grid-gap: $standard_padding;
   .comp1 {
     grid-area: comp1;
