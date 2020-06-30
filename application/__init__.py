@@ -1,5 +1,5 @@
 from flask import Flask
-from application.secrets import secret_key
+import application.secrets as secrets
 
 app = Flask(__name__)
 
