@@ -422,6 +422,11 @@ main {
   }
 }
 
+h1, h2, h3, h4, h5 {
+  padding: 0;
+  margin: 0;
+}
+
 h1 {
   color: $heading1_color;
   font-size: $heading1_size;
