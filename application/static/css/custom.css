@@ -1,0 +1,114 @@
+#splash{
+margin-top: 0;
+display: grid;
+grid-template-areas:
+    "grid-main grid-side1 grid-side2"
+    "grid-main grid-side3 grid-side4";
+grid-template-columns:4fr 2fr 2fr;
+grid-template-rows: auto auto;
+grid-gap: 0;
+}
+
+#grid-main {
+grid-area: grid-main;
+background-image: url('../images/splash.png?v=2');
+background-color: #9A3DA0;
+color: #ffffff;
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+#grid-main #splash-text {
+text-align: center;
+padding: 2em;
+}
+
+#grid-main h1 {
+font-family: monospace;
+line-height: 80%;
+font-size: 5em;
+}
+
+#grid-side1 {
+grid-area: grid-side1;
+background-color: #E84855;
+color: #fff;
+}
+#grid-side2 {
+grid-area: grid-side2;
+background-color: #E84855;
+background-image: url('../images/savetime.png');
+background-size: cover;
+background-repeat: no-repeat;
+}
+#grid-side3 {
+grid-area: grid-side3;
+background-color: #99E1D9;
+background-image: url('../images/beginner.png');
+background-size: cover;
+background-repeat: no-repeat;
+}
+#grid-side4 {
+grid-area: grid-side4;
+background-color: #99E1D9;
+color: #000;
+}
+
+#grid-side1,
+#grid-side2,
+#grid-side3,
+#grid-side4 {
+padding: 2em;
+}
+
+
+@media screen and (max-width: 1300px) {
+#splash {
+    grid-template-areas:
+    "grid-main grid-main"
+    "grid-side1 grid-side2"
+    "grid-side3 grid-side4"
+    ;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows: auto auto auto;
+}
+}
+
+@media screen and (max-width: 750px) {
+#splash {
+    grid-template-areas:
+    "grid-main"
+    "grid-side1"
+    "grid-side2"
+    "grid-side3"
+    "grid-side4"      ;
+    grid-template-columns:auto;
+    grid-template-rows: auto auto 0 0 auto;
+}
+#grid-main,
+#grid-main #splash-text,
+#grid-side1,
+#grid-side2,
+#grid-side3,
+#grid-side4 {
+    padding: 1rem;
+}
+
+#grid-main h1 {
+    font-size: 3em;
+}
+}
+
+
+
+
+
+#unilay-users {
+background-color: #358bdc;
+padding: 5em;
+margin: auto;
+background-image: url("../images/examples.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+}

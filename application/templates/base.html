@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/fav.ico') }}">
     <title>Unilay 5{% if web_title %} - {{web_title}}{% endif %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/unilay5.css') }}?v={{version}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}?v={{version}}">
     <script src="{{ url_for('static', filename='js/toggles.js')}}?v={{version}}" charset="utf-8"></script>
     {% if additional_head %}{{ additional_head }}{% endif %}
   </head>
