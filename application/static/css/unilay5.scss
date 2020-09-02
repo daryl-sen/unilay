@@ -110,7 +110,7 @@ header {
     }
   }
 
-  nav {
+  nav, #navigation {
     grid-area: nav;
     padding: $standard_padding/2;
     text-align: right;
@@ -257,25 +257,6 @@ p {
 }
 
 main {
-
-  a:link, a:visited {
-    color: $link_color;
-  }
-  a:hover {
-    color: $link_hover;
-  }
-  a[target=_blank]::before {
-    content: '\274F  ';
-  }
-
-  a.navigation {
-    display: block;
-    margin: 0.5em 0;
-  }
-  a.navigation:before {
-    content: '\261B  ';
-  }
-
   %link-button
   {
     padding: 0.5em 1em;
@@ -299,6 +280,24 @@ main {
   a.button-secondary:hover {
     color: $navlink_hover;
   }
+}
+
+a:link, a:visited {
+  color: $link_color;
+}
+a:hover {
+  color: $link_hover;
+}
+a[target=_blank]::before {
+  content: '\274F  ';
+}
+
+a.navigation {
+  display: block;
+  margin: 0.5em 0;
+}
+a.navigation:before {
+  content: '\261B  ';
 }
 
 h1, h2, h3, h4, h5 {

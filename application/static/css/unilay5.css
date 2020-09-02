@@ -36,22 +36,22 @@ header #logo a:link, header #logo a:visited {
   color: #393939;
   text-decoration: none;
 }
-header nav {
+header nav, header #navigation {
   grid-area: nav;
   padding: 0.75em;
   text-align: right;
   z-index: 10;
 }
-header nav a {
+header nav a, header #navigation a {
   display: inline-block;
   color: #000;
   text-decoration: none;
   padding: 0 1em;
 }
-header nav a:hover {
+header nav a:hover, header #navigation a:hover {
   color: #e0e0e0;
 }
-header nav #closeMenu {
+header nav #closeMenu, header #navigation #closeMenu {
   display: none;
 }
 
@@ -170,22 +170,6 @@ p {
   line-height: 150%;
 }
 
-main a:link, main a:visited {
-  color: #ff3939;
-}
-main a:hover {
-  color: #ff9999;
-}
-main a[target=_blank]::before {
-  content: "❏ ";
-}
-main a.navigation {
-  display: block;
-  margin: 0.5em 0;
-}
-main a.navigation:before {
-  content: "☛ ";
-}
 main a.button-secondary, main a.button-primary {
   padding: 0.5em 1em;
   text-decoration: none;
@@ -204,6 +188,27 @@ main a.button-secondary {
 main a.button-primary:hover,
 main a.button-secondary:hover {
   color: #e0e0e0;
+}
+
+a:link, a:visited {
+  color: #ff3939;
+}
+
+a:hover {
+  color: #ff9999;
+}
+
+a[target=_blank]::before {
+  content: "❏ ";
+}
+
+a.navigation {
+  display: block;
+  margin: 0.5em 0;
+}
+
+a.navigation:before {
+  content: "☛ ";
 }
 
 h1, h2, h3, h4, h5 {
