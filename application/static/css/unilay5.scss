@@ -222,17 +222,20 @@ footer {
     -moz-border-radius: 1em 1em 1em 1em;
     -webkit-border-radius: 0em 0em 1em 1em;
 
-    a {
-      display: block;
-      padding: 0.75em 1.5em;
-      color: $navlink_mobile_color;
-      border-bottom: 1px solid $navlink_mobile_border_color;
-    }
+  }
 
-    #closeMenu {
-      display: block;
-      color: $secondary_color;
-    }
+  header #navigation a {
+    display: block;
+    font-size: 1.5em;
+    padding: 0.75em 1.5em;
+    color: $navlink_mobile_color;
+    border-bottom: 1px solid $navlink_mobile_border_color;
+  }
+
+  header #navigation #closeMenu {
+    display: block;
+    color: $secondary_color;
+    border-bottom: 0;
   }
 
   #openMenu {
