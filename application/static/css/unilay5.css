@@ -405,6 +405,10 @@ ADDON CHARACTERISTICS
   display: none;
 }
 
+.padded {
+  padding: 1.5em;
+}
+
 .display-block {
   display: block;
 }
