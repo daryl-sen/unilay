@@ -380,7 +380,7 @@ BLOCK LEVEL ELEMENTS
 }
 
 .sidebar-block {
-  padding: 0 $standard_padding 0 $standard_padding;
+  padding: $standard_padding/2 $standard_padding;
   margin-bottom: $standard_padding
 }
 
