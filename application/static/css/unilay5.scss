@@ -180,10 +180,9 @@ section {
 }
 
 footer {
-  font-size: 0.85em;
   border-top: 1px solid $line_color;
   padding-top: 1em;
-  max-width: 900px;
+  max-width: $page_width;
   color: $footer_color;
   margin: 5em auto 3em auto;
   display: grid;
@@ -194,10 +193,12 @@ footer {
   #copyright {
     grid-area: copyright;
     text-align: left;
+    font-size: 0.85em;
   }
   #version {
     grid-area: version;
     text-align: right;
+    font-size: 0.85em;
   }
 }
 
@@ -303,14 +304,14 @@ a.navigation:before {
   content: '\261B  ';
 }
 
-h1, h2, h3, h4, h5 {
-  padding: 0;
-  margin: 0;
+h2, h3, h4, h5 {
+  margin: 0.5em 0;
 }
 
 h1 {
   color: $heading1_color;
   font-size: $heading1_size;
+  margin: 1em 0;
 }
 
 h2 {
@@ -550,7 +551,10 @@ ADDON CHARACTERISTICS
   background-color: red;
 }
 .bg-yellow {
-  background-color: yellow;
+  background-color: #FED766;
+}
+.bg-gray {
+  background-color: #eeeeee;
 }
 
 .border-left-accent {
@@ -639,3 +643,4 @@ textarea {
   margin-bottom: 1em;
   resize:vertical;
 }
+
