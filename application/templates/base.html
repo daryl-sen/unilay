@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/fav.ico') }}">
-    <title>Unilay 5{% if web_title %} - {{web_title}}{% endif %}</title>
+    <title>{% block webtitle %}Unilay 5{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/unilay5.css') }}?v={{version}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}?v={{version}}">
     <script src="{{ url_for('static', filename='js/toggles.js')}}?v={{version}}" charset="utf-8"></script>
-    {% if additional_head %}{{ additional_head }}{% endif %}
+    {% block additional_head %}{% endblock %}
   </head>
   <body class="unilay5">
     <header>
@@ -17,10 +17,8 @@
             UNILAY
         </a></div>
         <nav id="navigation">
-          <a href="{{ url_for('core.index') }}">HOME</a>
-          <a href="{{ url_for('core.customize') }}">CUSTOMIZE</a>
-          <a href="{{ url_for('core.template') }}">TEMPLATE</a>
-          <a href="{{ url_for('core.index') }}#contact">CONTACT</a>
+          <a href="">HOME</a>
+          <a href="">CONTACT</a>
           <a id="closeMenu" onClick="toggleMenu()">CLOSE</a>
         </nav>
         <button id="openMenu" onClick="toggleMenu()">
