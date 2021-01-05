@@ -456,30 +456,31 @@ BLOCK LEVEL ELEMENTS
   display: grid;
   grid-gap: $standard_padding;
 
-  main {
+  .big {
     grid-area: main;
   }
-  aside {
+  .small {
     grid-area: aside;
   }
 }
 
-.main-aside {
+.big-small {
   @extend %with-sidebar;
-  grid-template-areas: "main aside";
+  grid-template-areas: "big small";
   grid-template-columns: auto $aside_width;
 }
-.aside-main {
+
+.small-big {
   @extend %with-sidebar;
-  grid-template-areas: "aside main";
+  grid-template-areas: "small big";
   grid-template-columns: $aside_width auto;
 }
 
 @media screen and (max-width: $aside_width*3) {
-  .main-aside, .aside-main {
+  .big-aside, .aside-big {
     grid-template-areas:
-      "main"
-      "aside";
+      "big"
+      "small";
     grid-template-columns: auto;
     grid-template-rows: auto auto;
   }
