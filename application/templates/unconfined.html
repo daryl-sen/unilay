@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block templateMain %}
+<main>
+  {% for message in get_flashed_messages() %}
+  <section class="confined" id='notif{{loop.index}}'>
+    <div class='notification' onClick = "dismissNotif('notif{{loop.index}}')">
+      {{ message }}
+    </div>
+  </section>
+  {% endfor %}
+  {% block main %}
+  {% endblock %}
+</main>
+{% endblock %}
