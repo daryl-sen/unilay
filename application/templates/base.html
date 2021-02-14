@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% set version = "5.0.4" %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/fav.ico') }}">
+    <title>{% block webtitle %}Unilay 5{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/unilay5.css') }}?v={{version}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}?v={{version}}">
+    <script src="{{ url_for('static', filename='js/toggles.js')}}?v={{version}}" charset="utf-8"></script>
+    {% block additional_head %}{% endblock %}
+  </head>
+  <body class="unilay5">
+    <header>
+        <div id="logo"><a href="{{ url_for('core.index') }}">
+            UNILAY
+        </a></div>
+        <nav id="navigation">
+          <a href="">HOME</a>
+          <a href="">CONTACT</a>
+          <a id="closeMenu" onClick="toggleMenu()">CLOSE</a>
+        </nav>
+        <button id="openMenu" onClick="toggleMenu()">
+          &#9776;
+        </button>
+        <div id="shades" class="hidden" onClick="toggleMenu()"></div>
+    </header>
+      {% block templateMain %}
+      <main>
+        <h1>No content</h1>
+      </main>
+      {% endblock %}
+    <footer>
+      <div id="copyright">
+        &copy; Sen Tang, 2020
+      </div>
+      <div id="version">
+        version {{version}}
+      </div>
+    </footer>
+  </body>
+</html>
