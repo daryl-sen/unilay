@@ -1,7 +1,11 @@
 $primary-color: #358bdc;
-$background-color: #393939;
+$background-color: #e6e6e6;
 $nav-link-color: #e6e6e6;
 $nav-link-hover-color: #e6e6e6;
+$body-font: 'Helvetica';
+
+$logo-url: 'logo-small.png';
+
 
 
 // LAYOUT
@@ -23,10 +27,11 @@ body {
   padding: 5em 0 0 0;
   background-color: $background-color;
   font-size: 18px;
+  font-family: $body-font;
 }
 
 nav {
-  padding: 1.5em;
+  padding: 1.2em;
   font-size: 1.2em;
   background-color: $primary-color;
   position: fixed;
@@ -36,8 +41,16 @@ nav {
   justify-content: space-between;
 
   #logo-with-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+    line-height: 40px;
+    // font-weight: bold;
     color: #fff;
-    font-weight: bold;
+    background: url($logo-url);
+    background-repeat: no-repeat;
+    height: 40px;
+    background-size: 40px 40px;
+    padding-left: 50px;
   }
 }
 
@@ -46,6 +59,7 @@ nav>ul {
   margin: 0;
 
   li {
+    line-height: 45px;
     display: inline;
     margin: 0 1em;
 
@@ -65,7 +79,7 @@ main {
 }
 
 footer {
-  padding: 1.5em;
+  padding: 1em 1.5em 1.5em 1.5em;
   display: flex;
   justify-content: space-between;
   border-top: 1px solid black;
