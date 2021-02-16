@@ -70,7 +70,7 @@ nav ul li a {
 nav ul li a:hover {
   color: #e6e6e6;
 }
-nav ul li:last-child {
+nav ul #close-button {
   margin-right: 0;
   display: none;
 }
@@ -110,6 +110,10 @@ footer {
   margin-right: auto;
 }
 
+.padded {
+  padding: 1.5em;
+}
+
 .spacer-small {
   padding-bottom: 2rem;
 }
@@ -140,8 +144,16 @@ footer {
     z-index: 1;
   }
 
+  #nav-links {
+    padding: 0 0 0 0;
+  }
+  #nav-links li {
+    padding: 0.5em 1.5em;
+  }
+
   nav ul {
     position: fixed;
+    padding: 0;
     top: 1rem;
     right: 1rem;
     background-color: #fff;
@@ -156,6 +168,21 @@ footer {
   }
   nav ul li {
     display: block;
+    font-size: 1.2em;
+    padding: 0;
+    margin: 0.5em 0;
+    border-bottom: 1px solid gray;
+  }
+  nav ul li a {
+    color: #358bdc;
+  }
+  nav ul li a:hover {
+    color: #265f94;
+  }
+  nav ul #close-button {
+    display: block;
+    color: #ff3939;
+    border: 0;
   }
 }
 

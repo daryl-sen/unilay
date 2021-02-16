@@ -91,7 +91,7 @@ nav ul {
     }
   }
 
-  li:last-child {
+  #close-button {
     margin-right: 0;
     display: none;
   }
@@ -135,7 +135,7 @@ footer {
 }
 
 .padded {
-
+  padding: 1.5em;
 }
 
 .spacer-small {
@@ -171,8 +171,16 @@ footer {
     z-index: 1;
   }
 
+  #nav-links {
+    padding: 0 0 0 0;
+    li {
+      padding: 0.5em 1.5em;
+    }
+  }
+
   nav ul {
     position: fixed;
+    padding: 0;
     top: 1rem;
     right: 1rem;
     background-color: #fff;
@@ -187,6 +195,24 @@ footer {
 
     li {
       display: block;
+      font-size: 1.2em;
+      padding: 0;
+      margin: 0.5em 0;
+      border-bottom: 1px solid gray;
+    }
+
+    li a {
+      color: #358bdc;
+    }
+
+    li a:hover {
+      color: #265f94;
+    }
+
+    #close-button {
+      display: block;
+      color: #ff3939;
+      border: 0;
     }
   }
 }
