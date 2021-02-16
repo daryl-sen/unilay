@@ -6,19 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unilay 6 - Universal Layout Library</title>
   <link rel="stylesheet" href="resources/unilay6.css">
+  <script src="resources/uiToggles.js"></script>
 </head>
 <body>
   <nav>
     <div id="logo-with-text">UNILAY 6</div>
-    <ul>
-      <li><a href="">Documentation</a></li>
-      <li><a href="">Contact</a></li>
-      <li><button id="mobileNavButton">☰ MENU</button></li>
-    </ul>
+    <div id="nav-menu">
+      <ul id="nav-links">
+        <li><a href="">Documentation</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a>Close</a></li>
+      </ul>
+      <button id="mobile-nav-button" class="hidden">☰ MENU</button>
+    </div>
   </nav>
+  <div id="shades" class="hidden"></div>
   <header>
   </header>
-  <main>
+  <main class="confined">
     <section id="welcome">
       <h1>Universal Layout Design</h1>
       <p>
