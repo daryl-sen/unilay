@@ -11,7 +11,9 @@ $logo-url: 'logo-small.png';
 
 
 
-// LAYOUT
+/* *****************************************************************************
+PAGE SETUP
+***************************************************************************** */
 
 html {
   -webkit-box-sizing: border-box;
@@ -51,8 +53,6 @@ nav {
   padding: 1.5rem;
   font-size: 1.2rem;
   background-color: $primary-color;
-  // position: fixed;
-  // top: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -61,7 +61,6 @@ nav {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.8rem;
     line-height: 40px;
-    // font-weight: bold;
     color: #fff;
     background: url($logo-url);
     background-repeat: no-repeat;
@@ -71,7 +70,7 @@ nav {
   }
 }
 
-nav ul {
+#nav-links {
   font-size: 1.1rem;
   padding: 0;
   margin: 0;
@@ -110,10 +109,6 @@ nav ul {
   z-index: 9;
 }
 
-p {
-  line-height: 150%;
-}
-
 main {
   padding: 1.5rem;
 }
@@ -124,6 +119,120 @@ footer {
   justify-content: space-between;
   border-top: 1px solid black;
   font-size: 0.8em;
+}
+
+/* *****************************************************************************
+TEXT SETUP (LINKS, HEADERS, PARAGRAPHS)
+***************************************************************************** */
+p {
+  line-height: 150%;
+}
+
+.button-primary, .button-secondary {
+  padding: 0.5em 1em;
+  text-decoration: none;
+  margin: 1em auto;
+  display: inline-block;
+  text-align: center;
+}
+
+a.button-primary {
+  background-color: #ff3939;
+  color: #000;
+}
+
+a.button-secondary {
+  background-color: #358bdc;
+  color: #000;
+}
+
+button-primary:hover,
+button-secondary:hover {
+  color: #e0e0e0;
+}
+
+a:link, a:visited {
+  color: #ff3939;
+}
+
+a:hover {
+  color: #ff9999;
+}
+
+a.navigation {
+  display: block;
+  margin: 0.5em 0;
+}
+
+a.navigation:before {
+  content: '\261B  ';
+}
+
+h2, h3, h4, h5 {
+  margin: 0.5em 0;
+}
+
+h1 {
+  color: inherit;
+  font-size: 2em;
+  margin: 1em 0;
+}
+
+h2 {
+  color: inherit;
+  font-size: 1.6em;
+}
+
+h3 {
+  color: inherit;
+  font-size: 1.4em;
+}
+
+h4 {
+  color: inherit;
+  font-size: 1.2em;
+}
+
+h5 {
+  color: inherit;
+  font-size: 1em;
+}
+
+pre {
+  padding: 0.5em;
+  font-size: 0.9em;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+code {
+  padding: 0.1em;
+  font-size: 0.8em;
+}
+
+pre, code {
+  background-color: #e6e6e6;
+  font-family: monospace;
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+}
+
+ul, ol {
+  margin: 1em 0;
+}
+
+ul li, ol li {
+  padding: 0.1em 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: auto;
 }
 
 // modular classes
