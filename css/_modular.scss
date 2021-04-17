@@ -1,0 +1,38 @@
+.side-by-side {
+  display: flex;
+  justify-content: space-between;
+}
+.side-by-side>div {
+  margin: 1em;
+  flex: 1 1 0px;
+}
+.side-by-side>div:first-child {
+  margin-left: 0;
+}
+.side-by-side>div:last-child {
+  margin-right: 0;
+}
+
+.big-small {
+  display: flex;
+  >div:first-child {
+    flex-grow: 2;
+    margin-right: 1rem;
+  }
+  >div:last-child {
+    flex-grow: 1;
+    max-width: 30%;
+  }
+}
+
+.small-big {
+  display: flex;
+  >div:first-child {
+    flex-grow: 1;
+    max-width: 30%;
+  }
+  >div:last-child {
+    flex-grow: 2;
+    margin-left: 1rem;
+  }
+}
