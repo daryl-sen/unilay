@@ -41,7 +41,12 @@ nav {
   display: flex;
   justify-content: space-between;
 
-  #logo-with-text {
+  #logo-with-text,
+  #logo-with-text:link
+  #logo-with-text:active,
+  #logo-with-text:visited,
+  #logo-with-text:hover
+  {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.8rem;
     line-height: 40px;
@@ -52,6 +57,7 @@ nav {
     background-size: 40px 40px;
     padding-left: 50px;
     overflow: hidden;
+    text-decoration: none;
   }
 }
 

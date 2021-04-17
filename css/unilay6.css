@@ -102,7 +102,11 @@ nav {
   width: 100%;
   display: flex;
   justify-content: space-between; }
-  nav #logo-with-text {
+  nav #logo-with-text,
+  nav #logo-with-text:link
+  #logo-with-text:active,
+  nav #logo-with-text:visited,
+  nav #logo-with-text:hover {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.8rem;
     line-height: 40px;
@@ -112,7 +116,8 @@ nav {
     height: 40px;
     background-size: 40px 40px;
     padding-left: 50px;
-    overflow: hidden; }
+    overflow: hidden;
+    text-decoration: none; }
 
 nav ul {
   font-size: 1.1rem;
