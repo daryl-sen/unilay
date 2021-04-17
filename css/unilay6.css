@@ -111,7 +111,8 @@ nav {
     background-repeat: no-repeat;
     height: 40px;
     background-size: 40px 40px;
-    padding-left: 50px; }
+    padding-left: 50px;
+    overflow: hidden; }
 
 nav ul {
   font-size: 1.1rem;
@@ -157,6 +158,8 @@ footer {
   #mobile-nav-button {
     display: block;
     z-index: 1; }
+    #mobile-nav-button:before {
+      content: '\2261 \0020 MENU'; }
 
   #nav-links {
     padding: 0 0 0 0; }
@@ -191,6 +194,12 @@ footer {
       display: block;
       color: #ff3939;
       border: 0; } }
+@media screen and (max-width: 30rem) {
+  #mobile-nav-button {
+    display: block;
+    z-index: 1; }
+    #mobile-nav-button:before {
+      content: '\2261 \0020'; } }
 form {
   font-size: 1em; }
 
