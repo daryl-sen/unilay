@@ -26,7 +26,7 @@ p {
   line-height: 150%;
   font-size: 1em; }
 
-a:link {
+a:link, a:visited {
   color: #ff3939; }
 
 a:hover {
@@ -304,7 +304,7 @@ textarea {
   display: none; }
 
 .padded {
-  padding: 1em; }
+  padding: 2rem; }
 
 .display-block {
   display: block; }
@@ -345,11 +345,11 @@ textarea {
   padding: 0.5em 1em; }
 
 .notification {
-  padding: 1em;
+  padding: 2rem;
   background-color: #353535;
   color: #fff;
   line-height: 1.5em;
-  margin: 1em 0; }
+  margin: 2rem 0; }
 
 .notification::before {
   content: '\26A0';
