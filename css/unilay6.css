@@ -287,6 +287,11 @@ textarea {
     .side-by-side-flex > div, .side-by-side-flex > div:first-child, .side-by-side-flex > div:last-child {
       flex-grow: 1; }
 
+  .side-by-side {
+    display: block; }
+    .side-by-side > div {
+      margin-bottom: 2rem; }
+
   .big-small, .small-big {
     grid-template-areas: "main" "aside";
     grid-template-columns: auto;
@@ -339,6 +344,10 @@ textarea {
 
 .bg-gray {
   background-color: #eeeeee; }
+
+.bg-purple-red-gradient {
+  background-image: linear-gradient(to bottom right, #750099, #571a29);
+  color: #fff; }
 
 .border-left-accent {
   border-left: 5px solid #358bdc;

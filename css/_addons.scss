@@ -57,6 +57,11 @@
   background-color: #eeeeee;
 }
 
+.bg-purple-red-gradient {
+  background-image: linear-gradient(to bottom right, #750099, #571a29);
+  color: #fff;
+}
+
 .border-left-accent {
   border-left: 5px solid $primary_color;
   padding: 0.5em 1em;
