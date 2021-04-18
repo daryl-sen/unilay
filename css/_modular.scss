@@ -46,6 +46,13 @@
     }
   }
 
+  .side-by-side {
+    display: block;
+    &>div {
+      margin-bottom: $standard-padding;
+    }
+  }
+
   .big-small, .small-big {
     grid-template-areas: 
     "main"
