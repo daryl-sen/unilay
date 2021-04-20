@@ -149,9 +149,6 @@ nav ul {
   height: 100%;
   z-index: 9; }
 
-main {
-  padding: 1.5rem; }
-
 footer {
   padding: 1rem 1.5rem 1.5rem 1.5rem;
   display: flex;
@@ -270,9 +267,9 @@ textarea {
 .big-small {
   display: grid;
   grid-template-areas: "main aside";
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: auto;
-  grid-gap: 1rem; }
+  grid-gap: 2rem; }
 
 .small-big {
   display: grid;
@@ -378,7 +375,7 @@ textarea {
   margin-bottom: 10em; }
 
 .confined {
-  max-width: 59rem;
+  max-width: 70rem;
   margin-left: auto;
   margin-right: auto; }
 
