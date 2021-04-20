@@ -366,13 +366,13 @@ textarea {
   margin-bottom: 1em; }
 
 .spacer-small {
-  margin-bottom: 2em; }
+  margin-bottom: 1rem; }
 
 .spacer-medium {
-  margin-bottom: 4em; }
+  margin-bottom: 2rem; }
 
 .spacer-large {
-  margin-bottom: 10em; }
+  margin-bottom: 8rem; }
 
 .confined {
   max-width: 70rem;
