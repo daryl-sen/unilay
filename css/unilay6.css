@@ -149,6 +149,9 @@ nav ul {
   height: 100%;
   z-index: 9; }
 
+body > main {
+  padding: 1.5rem; }
+
 footer {
   padding: 1rem 1.5rem 1.5rem 1.5rem;
   display: flex;
