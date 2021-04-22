@@ -41,7 +41,12 @@ nav {
   display: flex;
   justify-content: space-between;
 
-  #logo-with-text {
+  #logo-with-text,
+  #logo-with-text:link
+  #logo-with-text:active,
+  #logo-with-text:visited,
+  #logo-with-text:hover
+  {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.8rem;
     line-height: 40px;
@@ -51,6 +56,8 @@ nav {
     height: 40px;
     background-size: 40px 40px;
     padding-left: 50px;
+    overflow: hidden;
+    text-decoration: none;
   }
 }
 
@@ -93,7 +100,7 @@ nav ul {
   z-index: 9;
 }
 
-main {
+body>main {
   padding: 1.5rem;
 }
 
@@ -110,6 +117,9 @@ footer {
   #mobile-nav-button {
     display: block;
     z-index: 1;
+    &:before {
+      content: '\2261 \0020 MENU';
+    }
   }
 
   #nav-links {
@@ -125,8 +135,7 @@ footer {
     top: 1rem;
     right: 1rem;
     background-color: #fff;
-    width: 50%;
-    min-width: 300px;
+    width: auto;
     padding: 2rem;
     z-index: 10;
     border-radius: 1em 1em 1em 1em;
@@ -154,6 +163,16 @@ footer {
       display: block;
       color: #ff3939;
       border: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-cutoff) {
+  #mobile-nav-button {
+    display: block;
+    z-index: 1;
+    &:before {
+      content: '\2261 \0020';
     }
   }
 }
