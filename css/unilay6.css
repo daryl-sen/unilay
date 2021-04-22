@@ -291,7 +291,7 @@ textarea {
   .side-by-side {
     display: block; }
     .side-by-side > div {
-      margin-bottom: 2rem; }
+      margin-bottom: 1rem; }
 
   .big-small, .small-big {
     grid-template-areas: "main" "aside";
