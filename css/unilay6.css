@@ -285,7 +285,8 @@ textarea {
   .side-by-side-flex {
     flex-direction: column; }
     .side-by-side-flex > div, .side-by-side-flex > div:first-child, .side-by-side-flex > div:last-child {
-      flex-grow: 1; }
+      flex-grow: 1;
+      margin: 0; }
 
   .side-by-side {
     display: block; }

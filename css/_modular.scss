@@ -1,14 +1,14 @@
 .side-by-side-flex {
   display: flex;
   justify-content: space-between;
-  >div {
+  &>div {
     margin: 1em;
     flex: 1 1 0px;
   }
-  >div:first-child {
+  &>div:first-child {
     margin-left: 0;
   }
-  >div:last-child {
+  &>div:last-child {
     margin-right: 0;
   }
 }
@@ -41,7 +41,7 @@
 @media screen and (max-width: $narrow-cutoff) {
   .side-by-side-flex {
     flex-direction: column;
-    >div, >div:first-child, >div:last-child {
+    &>div, &>div:first-child, &>div:last-child {
       flex-grow: 1;
       margin: 0;
     }
